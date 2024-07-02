@@ -1,0 +1,76 @@
+{% extends "front/classification_base.html" %}
+{% block content %}
+
+<h2 class="text-center mt-4">HMFFOC分类模型</h2>
+
+<div class="text-center">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <label for="imageUpload" class="btn btn-primary btn-lg upload-label">
+                上传
+            </label>
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" style="display:none;">
+            <button type="button" class="btn btn-info btn-lg help-button" data-toggle="modal" data-target="#helpModal">
+                帮助
+            </button>
+        </div>
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview"></div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg mt-3" id="btn-predict">开始预诊断</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <h3 id="result" class="result" style="display:none;">
+        <span></span>
+    </h3>
+
+    <div id="disclaimer" class="disclaimer" style="display:none; margin-top: 15px; color: red;">
+        <p>提示：此结果仅供科研参考，不能作为最终诊断结果，请咨询专业医师进行进一步确认。</p>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpModalLabel">帮助</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h2>使用步骤</h2>
+    <ol>
+        <li>
+            <strong>上传 OCT 图像：</strong>
+            <p>点击绿色的 "上传" 按钮。在弹出的文件选择窗口中，选择一个 .png、.jpg 或 .jpeg 格式的 OCT 图像文件。</p>
+        </li>
+        <li>
+            <strong>开始预诊断：</strong>
+            <p>上传图像后，页面会显示图像预览和 "开始预诊断" 按钮。点击 "开始预诊断" 按钮，系统会对上传的 OCT 图像进行预诊断，并返回结果。</p>
+        </li>
+        <li>
+            <strong>查看诊断结果：</strong>
+            <p>诊断结果会显示在页面中央的结果区域。<br>
+            <strong>注意：</strong> 结果仅供科研参考，不能作为最终诊断结果，请咨询专业医师进行进一步确认。</p>
+        </li>
+    </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

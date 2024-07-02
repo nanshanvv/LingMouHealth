@@ -1,0 +1,110 @@
+/* main.css */
+
+/* 设置整体背景色和字体 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 优化导航栏样式 */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* 使上传按钮更显眼 */
+.upload-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#imageUpload {
+    display: none;
+}
+
+/* 预览图像部分 */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 调整图片预览样式 */
+.img-preview {
+    margin: 10px 0;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    object-fit: contain;  /* 确保图片按比例缩放并完整显示 */
+}
+
+/* 优化预测按钮样式 */
+.btn-primary {
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* 加载动画居中对齐 */
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loader-spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 优化结果显示样式 */
+.result {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-label, .help-button {
+    width: 80px;  /* 设置按钮的宽度 */
+    height: 50px; /* 设置按钮的高度 */
+    display: inline-block; /* 使得标签和按钮都成为内联块元素 */
+    text-align: center; /* 使得标签中的文本居中 */
+    line-height: 50px; /* 设置行高使得文本垂直居中 */
+}
+
+.help-button {
+    margin-left: 20px; /* 设置按钮之间的间距 */
+}
+
